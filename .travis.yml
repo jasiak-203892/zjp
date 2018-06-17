@@ -1,0 +1,4 @@
+language: java
+sudo: false
+before_script: cd zjp
+script: mvn install
