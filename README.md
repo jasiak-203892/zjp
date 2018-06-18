@@ -18,8 +18,8 @@
 - Clean code
 - JUnit
 
-# Wymagania:
-Baza danych MySQL (nazwę bazy, port, login i hasło można zmienić w `application.properties`).
+#### Wymagania:
+Baza danych MySQL (nazwę bazy, port, login i hasło można zmienić w `application.properties`).  
 Jedyne co trzeba zrobić, to utworzyć ręcznie bazę danych:
 ```
 CREATE DATABASE zjp
