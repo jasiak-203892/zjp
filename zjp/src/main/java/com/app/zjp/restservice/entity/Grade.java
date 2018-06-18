@@ -1,14 +1,13 @@
 package com.app.zjp.restservice.entity;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Subject {
+public class Grade {
 
     @Id
     private Integer id;
-    private String name;
+    private Integer grades;
 
     public Integer getId() {return id; }
 
@@ -16,17 +15,17 @@ public class Subject {
         this.id = id;
     }
 
-    public String getName() {return name; }
+    public Integer getGrade() {return grades; }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setGrade(Integer grades) {
+        this.grades = grades;
     }
 
     @Override
     public String toString() {
-        return "Subject{" +
+        return "Grade{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", grades=" + grades +
                 '}';
     }
 }
