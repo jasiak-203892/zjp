@@ -1,7 +1,11 @@
 package com.app.zjp.restservice.controller;
 
 import com.app.zjp.restservice.entity.Student;
+import com.app.zjp.restservice.entity.Teacher;
 import com.app.zjp.restservice.repository.StudentRepository;
+
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,5 +33,20 @@ public class StudentController {
     @GetMapping(path="/all")
     public @ResponseBody Iterable<Student> getAllStudent() {
         return studentRepository.findAll();
+    }
+    @GetMapping(path="/delete")
+    public @ResponseBody
+    String deleteTeacher (@RequestParam Integer id) {
+        Student studentToDelete = new Student();
+        Optional<Student> option = studentRepository.findById(id);
+        if(option.isPresent()) {
+        	studentToDelete=option.get();
+        	studentRepository.delete(studentToDelete);
+        }
+        else {
+        	return "No student with this ID";
+        }
+
+        return "Student has been deleted";
     }
 }

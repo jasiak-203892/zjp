@@ -60,4 +60,19 @@ public class TeacherController {
     public @ResponseBody Iterable<Teacher> getAllTeachers() {
         return teacherRepository.findAll();
     }
+    @GetMapping(path="/delete")
+    public @ResponseBody
+    String deleteTeacher (@RequestParam Integer id) {
+        Teacher teacherToDelete = new Teacher();
+        Optional<Teacher> option = teacherRepository.findById(id);
+        if(option.isPresent()) {
+        	teacherToDelete=option.get();
+        	teacherRepository.delete(teacherToDelete);
+        }
+        else {
+        	return "No teacher with this ID";
+        }
+
+        return "Teacher has been deleted";
+    }
 }
