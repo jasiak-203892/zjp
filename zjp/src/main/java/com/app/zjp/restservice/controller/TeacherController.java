@@ -3,7 +3,7 @@ package com.app.zjp.restservice.controller;
 import com.app.zjp.restservice.entity.Subject;
 import com.app.zjp.restservice.entity.Teacher;
 import com.app.zjp.restservice.repository.SubjectRepository;
-import com.app.zjp.restservice.repository.TeachertRepository;
+import com.app.zjp.restservice.repository.TeacherRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,7 +15,7 @@ import java.util.Optional;
 @RequestMapping(path="/teacher")
 public class TeacherController {
     @Autowired
-    private TeachertRepository teacherRepository;
+    private TeacherRepository teacherRepository;
 
     @Autowired
     private SubjectRepository subjectRepository;
@@ -59,6 +59,7 @@ public class TeacherController {
     public @ResponseBody Iterable<Teacher> getAllTeachers() {
         return teacherRepository.findAll();
     }
+
     @GetMapping(path="/delete")
     public @ResponseBody
     String deleteTeacher (@RequestParam Integer id) {

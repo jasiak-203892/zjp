@@ -30,9 +30,10 @@ public class SubjectController {
     public @ResponseBody Iterable<Subject> getAllSubjects() {
         return subjectRepository.findAll();
     }
+
     @GetMapping(path="/delete")
     public @ResponseBody
-    String deleteTeacher (@RequestParam Integer id) {
+    String deleteSubject (@RequestParam Integer id) {
         Subject subjectToDelete = new Subject();
         Optional<Subject> option = subjectRepository.findById(id);
         if(option.isPresent()) {
