@@ -17,13 +17,13 @@ public class Subject {
     private Integer id;
     private String name;
     @OneToMany(targetEntity=Grade.class)
-    private ArrayList<Grade> grades;
+    private List<Grade> grades;
 
-    public ArrayList<Grade> getGrades() {
+    public List<Grade> getGrades() {
 		return grades;
 	}
 
-	public void setGrades(ArrayList<Grade> grades) {
+	public void setGrades(List<Grade> grades) {
 		this.grades = grades;
 	}
 

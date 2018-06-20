@@ -23,13 +23,13 @@ public class Student {
     private ClassGroup classGroup;
    
 	@OneToMany(targetEntity=Subject.class)
-    private ArrayList<Subject> subjects;
+    private List<Subject> subjects;
 	
-    public ArrayList<Subject> getSubjects() {
+    public List<Subject> getSubjects() {
 		return subjects;
 	}
 
-	public void setSubjects(ArrayList<Subject> subjects) {
+	public void setSubjects(List<Subject> subjects) {
 		this.subjects = subjects;
 	}
     public Integer getId() {
