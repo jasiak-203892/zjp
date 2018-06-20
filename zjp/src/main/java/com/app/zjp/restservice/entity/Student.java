@@ -1,9 +1,9 @@
 package com.app.zjp.restservice.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreType;
+
+import javax.persistence.*;
 
 @Entity
 public class Student {
@@ -14,6 +14,10 @@ public class Student {
     private int album;
     private String name;
     private String email;
+
+    @ManyToOne
+    @JsonIgnore
+    private ClassGroup classGroup;
 
     public Integer getId() {
         return id;
@@ -45,6 +49,14 @@ public class Student {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public ClassGroup getClassGroup() {
+        return classGroup;
+    }
+
+    public void setClassGroup(ClassGroup classGroup) {
+        this.classGroup = classGroup;
     }
 
     @Override
