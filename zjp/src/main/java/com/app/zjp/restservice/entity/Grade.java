@@ -23,9 +23,5 @@ public class Grade {
 
     @Override
     public String toString() {
-        return "Grade{" +
-                "id=" + id +
-                ", grades=" + grades +
-                '}';
-    }
+        return "Grade{" + "id=" + id + ", grades=" + grades + '}'; }
 }
