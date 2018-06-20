@@ -1,6 +1,5 @@
 package com.app.zjp.restservice.controller;
 
-import com.app.zjp.logging.Logger;
 import com.app.zjp.restservice.entity.Student;
 import com.app.zjp.restservice.repository.StudentRepository;
 import java.util.Optional;
@@ -20,7 +19,6 @@ public class StudentController {
     @GetMapping(path="/add")
     public @ResponseBody
     String addNewStudent (@RequestParam Integer album, @RequestParam String name, @RequestParam String email) {
-        Logger.getInstance().log("Adding new student");
         Student n = new Student();
         n.setAlbum(album);
         n.setName(name);
@@ -30,13 +28,12 @@ public class StudentController {
     }
 
     @GetMapping(path="/all")
-    public @ResponseBody Iterable<Student> getAllStudents() {
+    public @ResponseBody Iterable<Student> getAllStudent() {
         return studentRepository.findAll();
     }
-
     @GetMapping(path="/delete")
     public @ResponseBody
-    String deleteStudent (@RequestParam Integer id) {
+    String deleteTeacher (@RequestParam Integer id) {
         Student studentToDelete = new Student();
         Optional<Student> option = studentRepository.findById(id);
         if(option.isPresent()) {
