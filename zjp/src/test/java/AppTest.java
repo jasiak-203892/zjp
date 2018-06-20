@@ -21,5 +21,4 @@ public class AppTest {
 
         System.out.println("Data is " + data);
     }
-
 }
