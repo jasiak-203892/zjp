@@ -13,7 +13,7 @@ import java.util.Optional;
 @RequestMapping(path="/class")
 public class ClassGroupController {
     @Autowired
-    private ClassGroupRepository classGroupRepositoy;
+    private ClassGroupRepository classGroupRepository;
 
     @Autowired
     private StudentRepository studentRepository;
@@ -23,14 +23,14 @@ public class ClassGroupController {
     String addNewClass (@RequestParam String name) {
         ClassGroup n = new ClassGroup();
         n.setName(name);
-        classGroupRepositoy.save(n);
+        classGroupRepository.save(n);
         return "Saved";
     }
 
     @GetMapping(path="/{id}/add-student")
     public @ResponseBody
     String addStudentToClass (@PathVariable("id") Integer id, @RequestParam Integer studentId) {
-        Optional<ClassGroup> option = classGroupRepositoy.findById(id);
+        Optional<ClassGroup> option = classGroupRepository.findById(id);
         if (option.isPresent()){
             Optional<Student> subjectOption = studentRepository.findById(studentId);
             if (subjectOption.isPresent()){
@@ -54,6 +54,6 @@ public class ClassGroupController {
 
     @GetMapping(path="/all")
     public @ResponseBody Iterable<ClassGroup> getAllClasses() {
-        return classGroupRepositoy.findAll();
+        return classGroupRepository.findAll();
     }
 }
