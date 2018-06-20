@@ -11,10 +11,10 @@
 - Travis
 - Baza danych (MySQL)
 - Java 8 (getPositiveGrades: lambda + Stream)
+- Wzorce projektowe (logger - singleton + lazy initialization)
 
 #### Do zrobienia
 - Rozszerzenie funkcjonalności
-- Wzorce projektowe
 - Clean code
 - JUnit
 
