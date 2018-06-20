@@ -1,9 +1,7 @@
 package com.app.zjp.restservice.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreType;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;

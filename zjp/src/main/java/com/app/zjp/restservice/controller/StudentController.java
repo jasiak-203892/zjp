@@ -1,11 +1,8 @@
 package com.app.zjp.restservice.controller;
 
 import com.app.zjp.restservice.entity.Student;
-import com.app.zjp.restservice.entity.Teacher;
 import com.app.zjp.restservice.repository.StudentRepository;
-
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
