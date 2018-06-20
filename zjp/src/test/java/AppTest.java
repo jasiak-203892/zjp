@@ -1,7 +1,8 @@
 import org.junit.Test;
 
 public class AppTest {
-    
+
+    //TODO Konfiguracja z Travis CI
     @Test
     public void basicPingTest() {
 
