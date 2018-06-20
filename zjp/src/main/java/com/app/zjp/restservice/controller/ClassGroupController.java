@@ -1,5 +1,6 @@
 package com.app.zjp.restservice.controller;
 
+import com.app.zjp.logging.Logger;
 import com.app.zjp.restservice.entity.ClassGroup;
 import com.app.zjp.restservice.entity.Student;
 import com.app.zjp.restservice.repository.ClassGroupRepository;
@@ -21,6 +22,7 @@ public class ClassGroupController {
     @GetMapping(path="/add")
     public @ResponseBody
     String addNewClass (@RequestParam String name) {
+        Logger.getInstance().log("Adding new class group");
         ClassGroup n = new ClassGroup();
         n.setName(name);
         classGroupRepository.save(n);

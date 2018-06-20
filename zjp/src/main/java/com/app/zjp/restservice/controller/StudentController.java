@@ -1,5 +1,6 @@
 package com.app.zjp.restservice.controller;
 
+import com.app.zjp.logging.Logger;
 import com.app.zjp.restservice.entity.Student;
 import com.app.zjp.restservice.repository.StudentRepository;
 import java.util.Optional;
@@ -19,6 +20,7 @@ public class StudentController {
     @GetMapping(path="/add")
     public @ResponseBody
     String addNewStudent (@RequestParam Integer album, @RequestParam String name, @RequestParam String email) {
+        Logger.getInstance().log("Adding new student");
         Student n = new Student();
         n.setAlbum(album);
         n.setName(name);
