@@ -41,10 +41,6 @@ public class ClassGroupController {
                 ClassGroup classGroup = option.get();
                 Student student = subjectOption.get();
 
-                Logger logger = Logger.getLogger("he");
-
-                logger.info(String.format("%d, %d", id, studentId));
-
                 if (!classGroup.getStudents().contains(student)){
                     student.setClassGroup(classGroup);
                     studentRepository.save(student);
