@@ -3,6 +3,9 @@ package com.app.zjp.restservice.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreType;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -18,7 +21,17 @@ public class Student {
     @ManyToOne
     @JsonIgnore
     private ClassGroup classGroup;
+   
+	@OneToMany(targetEntity=Subject.class)
+    private ArrayList<Subject> subjects;
+	
+    public ArrayList<Subject> getSubjects() {
+		return subjects;
+	}
 
+	public void setSubjects(ArrayList<Subject> subjects) {
+		this.subjects = subjects;
+	}
     public Integer getId() {
         return id;
     }
