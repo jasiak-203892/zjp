@@ -10,10 +10,10 @@
 - REST
 - Travis
 - Baza danych (MySQL)
+- Java 8 (getPositiveGrades: lambda + Stream)
 
 #### Do zrobienia
 - Rozszerzenie funkcjonalności
-- Java 8
 - Wzorce projektowe
 - Clean code
 - JUnit
