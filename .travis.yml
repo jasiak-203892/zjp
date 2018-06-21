@@ -1,4 +1,7 @@
 language: java
 sudo: false
+before_install:
+- sudo io.restassured
+install: mvn dependency:resolve
 before_script: cd zjp
 script: mvn install

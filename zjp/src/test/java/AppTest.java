@@ -1,12 +1,18 @@
 import org.junit.Test;
 
+import java.io.IOException;
+import java.net.ServerSocket;
+import static io.restassured.RestAssured.given;
+
 public class AppTest {
 
     //TODO Konfiguracja z Travis CI
     @Test
-    public void basicPingTest() {
+    public void basicPingTest() throws IOException {
 
-        //given().when().get("http://localhost:8090/students").then().statusCode(200);
+       // ServerSocket s = new ServerSocket(0);
+       // System.out.println("listening on port: " + s.getLocalPort());
+        //given().when().get("http://localhost:"+s.getLocalPort()+"/students").then().statusCode(200);
     }
 
     @Test

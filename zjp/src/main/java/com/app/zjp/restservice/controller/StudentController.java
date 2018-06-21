@@ -33,7 +33,6 @@ public class StudentController {
     public @ResponseBody Iterable<Student> getAllStudents() {
         return studentRepository.findAll();
     }
-
     @GetMapping(path="/delete")
     public @ResponseBody
     String deleteStudent (@RequestParam Integer id) {
