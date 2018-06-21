@@ -30,12 +30,12 @@ public class StudentController {
     }
 
     @GetMapping(path="/all")
-    public @ResponseBody Iterable<Student> getAllStudent() {
+    public @ResponseBody Iterable<Student> getAllStudents() {
         return studentRepository.findAll();
     }
     @GetMapping(path="/delete")
     public @ResponseBody
-    String deleteTeacher (@RequestParam Integer id) {
+    String deleteStudent (@RequestParam Integer id) {
         Student studentToDelete = new Student();
         Optional<Student> option = studentRepository.findById(id);
         if(option.isPresent()) {

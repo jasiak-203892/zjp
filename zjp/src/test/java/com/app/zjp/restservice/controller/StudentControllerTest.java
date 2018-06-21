@@ -44,7 +44,7 @@ public class StudentControllerTest {
         }
 
     @Test
-    public void getAllStudent() {
+    public void getAllStudents() {
         given().
                 when().
                 get("/student/all").
@@ -54,7 +54,7 @@ public class StudentControllerTest {
     }
 
     @Test
-    public void deleteTeacher() {
+    public void deleteStudent() {
         given()
                 .when ()
                 .contentType (ContentType.JSON)
